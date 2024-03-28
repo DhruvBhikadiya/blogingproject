@@ -1,0 +1,69 @@
+<%- include('header') %>
+
+<div class="col-12">
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Responsive Table</h6>
+        <div class="table-responsive">
+            <div class="images text-center">
+                <img src="<%= locals.admin.image %>" class="mb-5"  height="100"
+                    alt="profile" title="profile">
+            </div>
+            <div class="table-responsive table--no-card m-b-30">
+                <table class="table table-borderless table-striped table-earning text-center">
+                    <tr>
+                        <td>
+                            Name </td>
+                        <td>
+                            <%= locals.admin.name %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            >
+                            Email </td>
+                        <td>
+                            <%= locals.admin.email %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            >
+                            Gender </td>
+                        <td>
+                            <%= locals.admin.gender %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            >
+                            Hobby </td>
+                        <td>
+                            <%= locals.admin.hobby %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            >
+                            City </td>
+                        <td>
+                            <%= locals.admin.city %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td
+                            >
+                            Address </td>
+                        <td>
+                            <%= locals.admin.address %>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <center>
+                <a href="/admin/adminupdate/<%= locals.admin.id %>" class="btn btn-primary">Edit</a>
+            </center>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>

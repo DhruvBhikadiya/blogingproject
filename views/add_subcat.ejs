@@ -1,0 +1,48 @@
+<%- include('header') %>
+    <!-- HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="mt-5 col-sm-12 col-xl-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add offer data</h6>
+                            <form method="post" action="/admin/subcategory/subcategoryinsert" enctype="multipart/form-data">
+                                <div class="row mb-3">
+                                    <div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="categoryId">
+                                                <option selected>-- select category --</option>
+                                                <% cdata.map((v,i)=> { %>
+                                                    <option value="<%= v.id %>">
+                                                        <%= v.category %>
+                                                    </option>
+                                                <% } ) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="title" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="description">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="title" class="col-sm-2 col-form-label">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control" id="title" name="categoryimage">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-5">Add subcategory</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <%- include('footer') %>

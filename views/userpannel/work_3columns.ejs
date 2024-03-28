@@ -1,0 +1,99 @@
+<%- include('user_header') %>
+
+<div class="sidebar-menu-container" id="sidebar-menu-container">
+
+    <div class="sidebar-menu-push">
+
+        <div class="sidebar-menu-overlay"></div>
+
+        <div class="sidebar-menu-inner">
+
+            <header class="site-header">
+                <div id="main-header" class="main-header header-sticky">
+                    <div class="inner-header clearfix">
+                        <div class="logo">
+                            <a href="index-2.html">YOM</a>
+                        </div>
+                        <div class="header-right-toggle pull-right hidden-md hidden-lg">
+                            <a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <nav class="main-navigation pull-right hidden-xs hidden-sm">
+                            <ul>
+                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="#" class="has-submenu">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="clients.html">Clients</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="has-submenu">Blog</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog.html">Blog Classic</a></li>
+                                        <li><a href="blog-grid.html">Blog Grid</a></li>
+                                        <li><a href="blog-single.html">Single Post</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="#" class="has-submenu">Work</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="work-3columns.html">Three Columns</a></li>
+                                        <li><a href="work-4columns.html">Four Columns</a></li>
+                                        <li><a href="single-project.html">Single Project</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-heading wow fadeIn" data-wow-duration="1.5s" style="background-image: url(files/images/01-heading.jpg)">
+                <div class="container">
+                    <div class="page-name">
+                        <h1>Latest Photos</h1>
+                        <span>Lovely layout of heading</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio on-portfolio">
+                <div class="container">
+                    <div class="col-sm-12 text-center">
+                        <div id="projects-filter">
+                            <a href="#" data-filter="*" class="active">Show All</a>
+                            <% catdata.map((v,i) => { %>
+                              <a href="#" data-filter=".<%= v.id %>"><%= v.category %></a>  
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row" id="portfolio-grid">
+                          <% subcatdata.map((v,i) => { %>
+                            <div class="item col-md-4 col-sm-6 col-xs-12 <%= v.categoryId %>">
+                              <figure>
+                                <img alt="1-image" src="<%= v.categoryimage %>" height="300">
+                                <figcaption>
+                                    <h3><%= v.title %></h3>
+                                    <p><%= v.description %></p>
+                                </figcaption>
+                              </figure>	
+                            </div>  
+                          <% }) %>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="portfolio-page-nav text-center">
+                            <ul>
+                                <li><a href="#" class="current">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+<%- include('user_footer') %>

@@ -1,0 +1,39 @@
+<%- include('header') %>
+    <!-- HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="mt-5 col-sm-12 col-xl-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add slider data</h6>
+                            <form method="post" action="/admin/slider/insertslider" enctype="multipart/form-data">
+                                <div class="row mb-3">
+                                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="link" class="col-sm-2 col-form-label">Link</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="link" name="link">
+                                    </div>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Enter your address" id="description"
+                                        style="height: 150px;" name="description"></textarea>
+                                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                                </div>
+                                <div class="mt-3 mb-3">
+                                    <label for="formFile" class="form-label">Select image</label>
+                                    <input class="form-control bg-dark" type="file" id="formFile" name="sliderimage">
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <%- include('footer') %>

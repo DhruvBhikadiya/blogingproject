@@ -1,0 +1,36 @@
+<%- include('header') %>
+    <!-- HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="mt-5 col-sm-12 col-xl-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add slider data</h6>
+                            <form method="post" action="/admin/testimonial/inserttestimonial">
+                                <div class="form-floating mb-5">
+                                    <textarea class="form-control" placeholder="Enter your address" id="description"
+                                        style="height: 150px;" name="message"></textarea>
+                                    <label for="description" class="col-sm-2 col-form-label">Message</label>
+                                </div>
+                                <% var city=["Surat","Bhavnagar","Rajkot","Vadodara"] %>
+                                    <div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="city">
+                                                <option selected>-- select city --</option>
+                                                <% city.map((v,i)=> { %>
+                                                    <option value="<%= v %>">
+                                                        <%= v %>
+                                                    </option>
+                                                    <% } ) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                <button type="submit" class="btn btn-primary mt-5">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <%- include('footer') %>
